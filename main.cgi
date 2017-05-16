@@ -133,6 +133,10 @@ sub login() {
     return $returnHTML;
 }
 
+sub register() {
+# TODO
+}
+
 #
 # Page header
 #
@@ -141,9 +145,11 @@ sub auth_menu {
     $retVal .= "<ul>\n";
     $retVal .= "<bitter_list><bitter_menu_element>Welcome, $authUser.</bitter_menu_element></bitter_list>\n<br><br>\n";
     $retVal .= "<bitter_list><bitter_menu_element>" . logout() . "</bitter_menu_element></bitter_list>\n<br>\n";
+    $retVal .= "<bitter_list><bitter_menu_element>" . profile() . "</bitter_menu_element></bitter_list>\n<br>\n";
     $retVal .= "<bitter_list><bitter_menu_element>" . play() . "</bitter_menu_element></bitter_list>\n<br>\n";
     $retVal .= "<bitter_list><bitter_menu_element>" . buy_skins() . "</bitter_menu_element></bitter_list>\n<br>\n";
     $retVal .= "<bitter_list><bitter_menu_element>" . leaderboard() . "</bitter_menu_element></bitter_list>\n<br>\n";
+    $retVal .= "<bitter_list><bitter_menu_element>" . profile() . "</bitter_menu_element></bitter_list>\n<br>\n";
     $retVal .= "</ul>\n";
     $retVal .= "</div>\n<br>\n";
     return $retVal;
@@ -204,6 +210,13 @@ sub buy_skins() {
     return $retVal;
 }
 
+sub profile() {
+    my $retVal = start_form . "\n";   # Format details
+    $retVal .= submit(profile => "Profile") . "\n";
+    $retVal .= end_form . "\n";  # Format details
+    return $retVal;
+}
+
 #
 # Show details of the logged in user
 #
@@ -240,6 +253,22 @@ sub user_page() {
     }
     $retVal .= "</div>\n";
     return $retVal;
+}
+
+sub play() {
+# TODO
+}
+
+sub buy_skins() {
+# TODO
+}
+
+sub leaderboard() {
+# TODO
+}
+
+sub user_page() {
+# TODO
 }
 
 
